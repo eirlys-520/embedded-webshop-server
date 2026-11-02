@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>电子器件总商品</title>
+    </head>
+<body>
+    <h2 align='center'>电子器件商城</h2>
+    <hr>
+    <div align="center">
+        <a href="/goods_list">进入元器件商品搜索页面</a>
+    </div>
+    
+    <h3>分类页面入口</h3>
+    <ul>
+        <li><a href="/goods_list?key=电容器">直插铝电解电容</a></li>
+        <li><a href="/goods_list?key=电解电容">贴片型铝电解电容</a></li>
+        <li><a href="/goods_list?key=插件电阻">插件电阻</a></li>
+        <li><a href="/goods_list?key=贴片电容">贴片电容</a></li>
+        <li><a href="/goods_list?key=贴片电阻">贴片电阻</a></li>
+        <li><a href="/goods_list?key=场效应管">场效应管(MOSFET)</a></li>
+        <li><a href="/temp_sensor.html">温度传感器</a></li>
+        <li><a href="/op_amp.html">运算放大器</a></li>        
+        <li><a href="/goods_list?key=ST">单片机(MCU/MPU/SOC)</a></li>
+    </ul>
+    
+
+    <h3>全部商品总览</h3>
+    <div id="goods_box"></div>
+
+    <script>
+    fetch("/home_goods")
+    .then(res=>res.text())
+    .then(html=>{
+        document.getElementById("goods_box").innerHTML = html;
+    })
+    </script>
+
+
+</body>
+</html>
